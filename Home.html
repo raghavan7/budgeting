@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <title>Budgeting</title>
+  <style>
+    h1 {
+      text-align: center;
+    }
+
+    h2 {
+      padding: 30px;
+    }
+
+    h2+p {
+      margin-top: -30px;
+    }
+
+    p {
+      padding-left: 50px;
+      padding-right: 50px;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    p+ul {
+      margin-top: -10px;
+    }
+
+    ul {
+      margin: 50px;
+    }
+
+    li {
+      text-align: left;
+      list-style: circle
+    }
+  </style>
+</head>
+
+<body>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1> Budgeting will make your life better! </h1>
+      <img src="Images\condo-budgets.png" class="img-fluid" alt="Responsive image">
+    </div>
+  </div>
+  <h2> What is Budget ?</h2>
+  <p> A Budget is an arrangement you record to conclude how you will spend your cash every month. A Budget assists you
+    with making sure you will have sufficient cash consistently. Without a financial
+    plan, you could hit rock bottom financially prior to your next check.</p>
+  <p>A Budget helps you answer:</p>
+  <ul>
+    <li>How much money you make</li>
+    <li>How you spend your money</li>
+  </ul>
+
+  <h2> Why do I want a Budget? </h2>
+  <p>A budget helps you decide:
+  <ul>
+    <li>What you must spend your money on</li>
+    <li>In the event that you can spend less cash on certain things and more cash on different things</li>
+  </ul>
+  <h2>Why should I try to save money?</h2>
+  <p>You could require cash for a crisis. You likewise could have to purchase something more costly, similar to a
+    vehicle. Setting aside cash could assist you with purchasing a vehicle, putting a security store on a loft, or
+    paying for something expensive.</p>
+
+  <h2>Below is the yearly expense report of a person named <u> Sundar Picahi </u></h2>
+  <p> Assuming that you take a gander at the graph the cost isn't reliable and it fluctuates every month and maybe this
+    individual doesn't
+    have a Budget plan.</p>
+
+  <p> <b>Note : </b> Hover over the chart for the acutal readings</p>
+  <svg width=1200 height=800 style="fill:rgb(0,0,255);stroke-width:1;stroke:rgb(0,0,0)" id="bar1">
+    <line x1="100" y1="460" x2="850" y2="460" style="stroke:rgb(255,125,0);stroke-width:3" />
+    <text x="870" y="460" font-family="sans-serif" font-size="12px" fill="Orange">
+      <-- Average Expenses</text>
+        hite"/>
+        <text x="50%" y="10%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="30px"
+          fill="Blue">Expense Report 2022</text>
+  </svg>
+  <div>
+    <div align="center">
+      <a align="center " href="ExpenseByCategory.html" class="btn btn-primary"
+        style="display:inline-block;padding:0.3em 1.2em;margin:0 0.3em 0.3em 0;border-radius:2em;box-sizing: border-box;font-weight:300;color:#FFFFFF;background-color:#f14e4e;text-align:center;transition: all 0.2s;">Click
+        to Learn More on Budgeting</a>
+    </div>
+
+    <script type="text/javascript">
+      var color = ["red", "magenta", "aquamarine", "purple", "navy", "gold", "pink"]
+
+      d3.csv("https://raw.githubusercontent.com/Nelson09/Nelson09.github.io/main/DataSet/Monthly_Spend.csv", d3.autoType).then(function (data) {
+        console.log(data[0].Month)
+        var width = 800;
+        var height = 600;
+        var margin = 100;
+        var x = d3.scaleBand().domain(data.map(function (d) { return d.Month; })).range([0, width - 90]);
+        var y = d3.scaleLinear().domain([0, 9000]).range([height, 0]);
+
+        d3.select("svg").append("g").attr('id', 'bars').attr("transform", "translate(" + margin + "," + margin + ")").selectAll('g').data(data).enter().append('rect').attr("width", 40).attr('x', function (d, i) { return 60 * i }).attr("height", 0).attr('y', 600).transition().duration(4000).delay(700).attr('y', (d) => y(d.Total_Spend)).attr("height", (d) => y(0) - y(d.Total_Spend)).attr("fill", function (d) {
+          if (d.Month === 'JAN') { return "#bd3119"; }
+          if (d.Month === 'FEB') { return "yellow"; }
+          if (d.Month === 'MAR') { return "#3f96c4"; }
+          if (d.Month === 'APR') { return "#832cc9"; }
+          if (d.Month === 'MAY') { return "#c4c223"; }
+          if (d.Month === 'JUN') { return "#fc9803"; }
+          if (d.Month === 'JUL') { return "#4642d4"; }
+          if (d.Month === 'AUG') { return "#ab2c61"; }
+          if (d.Month === 'SEP') { return "#92c22b"; }
+          if (d.Month === 'OCT') { return "#3848b0"; }
+          if (d.Month === 'NOV') { return "#cf3c2b"; }
+          if (d.Month === 'DEC') { return "#c9b320"; }
+        })
+
+        d3.select("svg").append("g").attr("transform", "translate(" + margin + "," + margin + ")").call(d3.axisLeft(y));
+
+        d3.select("svg").append("g").attr("transform", "translate(" + margin + "," + (height + margin) + ")").call(d3.axisBottom(x)).selectAll("text")
+          .style("text-anchor", "end")
+          .attr("dx", "-.8em")
+          .attr("dy", ".15em")
+          .attr("transform", "rotate(-90)");
+
+        d3.select('body').append('div').attr('id', 'tooltip').attr('style', 'position: absolute; opacity: 0;');
+
+        d3.selectAll("rect").data(data).on('mouseover', function (d) {
+          d3.select('#tooltip').transition().duration(200).style('opacity', 1).text("$" + d.Total_Spend + " in " + d.Month).style("left", (d3.event.pageX) + "px").style("top", (d3.event.pageY) + "px")
+        }).on('mouseout', function () {
+          d3.select('#tooltip').style('opacity', 10)
+        })
+
+        svg.selectAll("text").data(data).enter().append('text').text(function (d) { return d.Month }).attr("transform", "rotate(-90)").attr('x', function (d, i) { return ((10 * i) + 5) }).attr('y', 200)//attr("font-family", "sans-serif")
+
+        svg.append("text")
+          .attr("transform",
+            "translate(" + (width / 2) + " ," +
+            (height + margin.top + 200) + ")")
+          .style("text-anchor", "middle")
+          .text("Date");
+
+      })
+
+
+      // Features of the annotation
+      const annotations = [
+          {
+            note: {
+              label: "Here is the annotation label",
+              title: "Annotation title"
+            },
+            x: 50,
+            y: 50,
+            dy: 50,
+            dx: 50
+          }
+        ]
+
+        // Add annotation to the chart
+        const makeAnnotations = d3.annotation()
+          .annotations(annotations);
+
+        svg.select("bar1").append("g").call(makeAnnotations);
+
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>
