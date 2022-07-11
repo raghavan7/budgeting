@@ -6,6 +6,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
+
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -44,6 +46,17 @@
       text-align: left;
       list-style: circle
     }
+
+    svg {
+      background-color: white;
+      font-family: 'Lato';
+    }
+
+    .annotation-note-title,
+    text.title {
+      font-weight: normal;
+      border: none;
+    }
   </style>
 </head>
 
@@ -56,17 +69,12 @@
     </div>
   </div>
 
-  <h2> Choose month from drop down menu to explore further</h2>
-
-
-  <br></br>
-  <div align=center class="dropdown">
-    <a align="left " href="ExpenseByCategory.html" class="btn btn-primary"> Back </a>
+  <h2> Choose month from drop down menu to explore further
     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-      aria-haspopup="true" aria-expanded="false">
-      Which Month ?
+      aria-haspopup="true" aria-expanded="false" style="display:inline-block;padding:0.5em 2em;margin:0 0.3em 0.3em 0;margin-bottom: 50px;border-radius:2em;box-sizing: border-box;font-weight:300;color:#FFFFFF;background-color:#f14e4e;text-align:center;transition: all 0.2s;">
+      Month ?
     </a>
-    
+
     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
       <a class="dropdown-item" href="SubScenes\JAN.html">JAN</a>
       <a class="dropdown-item" href="SubScenes\FEB.html">FEB</a>
@@ -81,9 +89,17 @@
       <a class="dropdown-item" href="SubScenes\NOV.html">NOV</a>
       <a class="dropdown-item" href="SubScenes\DEC.html">DEC</a>
     </div>
+  </h2>
+  <br></br>
+  <div align=center class="dropdown">
+    <a align="left " href="index.html" class="btn btn-primary"
+      style="display:inline-block;padding:0.5em 2em;margin:0 0.3em 0.3em 0;margin-bottom: 50px;border-radius:2em;box-sizing: border-box;font-weight:300;color:#FFFFFF;background-color:#f14e4e;text-align:center;transition: all 0.2s;"> Home </a>
+    <a align="left " href="ExpenseByCategory.html" class="btn btn-primary"
+    style="display:inline-block;padding:0.5em 2em;margin:0 0.3em 0.3em 0;margin-bottom: 50px;border-radius:2em;box-sizing: border-box;font-weight:300;color:#FFFFFF;background-color:#f14e4e;text-align:center;transition: all 0.2s;"> How to make a Budget ? </a>
+    
   </div>
 
-   
+
 
   </script>
   <!-- Optional JavaScript -->

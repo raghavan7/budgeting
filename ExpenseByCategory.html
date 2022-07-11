@@ -6,6 +6,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
+
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -45,6 +47,17 @@
       text-align: left;
       list-style: circle
     }
+
+    svg {
+      background-color: white;
+      font-family: 'Lato';
+    }
+
+    .annotation-note-title,
+    text.title {
+      font-weight: normal;
+      border: none;
+    }
   </style>
 
 </head>
@@ -53,7 +66,7 @@
 
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h1> How to make budget ? </h1>
+      <h1> How to make a Budget ? </h1>
       <img src="Images\budget.png" class="img-fluid" alt="Responsive image">
     </div>
   </div>
@@ -84,22 +97,32 @@
     than zero, you are spending more money than you make. Look at your budget to see what you do not need or what you
     could spend less on.</p>
 
-  <p> The below chart gives <b> JAMES BOND</b> a view of his expenses by Category and Month and will help in the process
+  <h2>How do I use my budget?</h2>
+  <p> You can use your budget every month:</p>
+  <ul>
+    <li>At the beginning of the month, make a plan for how you will spend your money that month. Write what you
+      think you will earn and spend.</li>
+    <li>Write down what you spend. Try to do this every day.</li>
+    <li>At the end of the month, see if you spent what you planned.</li>
+    <li>Use the information to help you plan the next month’s budget.</li>
+  </ul>
+
+  <p> The below chart gives <b> Sundar Pichai</b> a view of his expenses by Category and Month and will help in the
+    process
     of budgeting </p>
   <p> <b>Note : </b> Hover over the chart for the acutal readings</p>
 
   <svg width=1200 height=800 style="fill:rgb(0,0,255);stroke-width:1;stroke:rgb(0,0,0)">
-    <line x1="100" y1="560" x2="850" y2="560" style="stroke:rgb(255,125,0);stroke-width:3" />
-    <text x="870" y="560" font-family="sans-serif" font-size="12px" fill="Orange">
-      <-- Average Expenses</text>
-        <div width=1000 height=50>
-          <h4 align=left style="font-color:white">Expense details by Category </h4>
-        </div>
+    <line x1="100" y1="560" x2="600" y2="560" style="stroke:rgb(255,125,0);stroke-width:3" />
+    <text x="30%" y="10%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="30px"
+      fill="Blue">Expense details by Category </text>
   </svg>
   <div>
     <div align="center">
-      <a align="left " href="index.html" class="btn btn-primary"> Back </a>
-      <a align="center " href="ExploreByMonthByCategory.html" class="btn btn-primary"> Analyze more data >></a>
+      <a align="left " href="index.html" class="btn btn-primary"
+      style="display:inline-block;padding:0.5em 2em;margin:0 0.3em 0.3em 0;margin-bottom: 50px;border-radius:2em;box-sizing: border-box;font-weight:300;color:#FFFFFF;background-color:#f14e4e;text-align:center;transition: all 0.2s;"> Home </a>
+      <a align="center " href="ExploreByMonthByCategory.html" class="btn btn-primary"
+      style="display:inline-block;padding:0.5em 2em;margin:0 0.3em 0.3em 0;margin-bottom: 50px;border-radius:2em;box-sizing: border-box;font-weight:300;color:#FFFFFF;background-color:#f14e4e;text-align:center;transition: all 0.2s;"> Analyze more data >></a>
 
     </div>
 
@@ -109,13 +132,13 @@
 
       <script type="text/javascript">
         var color = ["red", "magenta", "aquamarine", "purple", "navy", "gold", "pink"]
-        d3.csv("https://raw.githubusercontent.com/Nelson09/Nelson09.github.io/main/DataSet/CategorySpend.csv", d3.autoType).then(function (data) {
+        d3.csv("https://raw.githubusercontent.com/raghavan7/Budgeting/main/DataSet/CategorySpend.csv", d3.autoType).then(function (data) {
           console.log(data[0].Category)
           var width = 800;
           var height = 600;
           var margin = 100;
           var x = d3.scaleBand().domain(data.map(function (d) { return d.Category; })).range([0, width - 340]);
-          var y = d3.scaleLinear().domain([0, 23000]).range([height, 0]);
+          var y = d3.scaleLinear().domain([0, 16000]).range([height, 0]);
 
           d3.select("svg").append("g").attr('id', 'bars').attr("transform", "translate(" + margin + "," + margin + ")").selectAll('g').data(data).enter().append('rect').attr("width", 40).attr('x', function (d, i) { return 60 * i }).attr("height", 0).attr('y', 600).transition().duration(4000).delay(700).attr('y', (d) => y(d.Total_Spend)).attr("height", (d) => y(0) - y(d.Total_Spend)).attr("fill", function (d) {
             if (d.Category === 'Shopping') { return "#bd3119"; }
@@ -133,8 +156,36 @@
             .style("text-anchor", "end")
             .attr("dx", "-.8em")
             .attr("dy", ".15em")
-            .attr("transform", "rotate(-90)")//.append("text").text(d.Category)//.attr("transform","rotate(-65)");
-          //d3.select("svg").selectAll("rect").data(data).on("mouseover",function(d,i){tooltip.style("opacity",1).style("left",(d3.event.pageX)+"px").style("top",(d3.event.pageY)+"px").html("weight is"+ d.Weight)})
+            .attr("transform", "rotate(-90)")
+
+          // Features of the annotation
+          const annotations = [
+            {
+              note: {
+                title: "Line indicating Average Expenses"
+              },
+              connector: {
+                end: "arrow",        // Can be none, or arrow or dot
+                type: "line",      // ?? don't know what it does
+                lineType: "vertical",    // ?? don't know what it does
+                endScale: 1    // arrow size
+              },
+              color: ["black"],
+              x: 600,
+              y: 560,
+              dy: 70,
+              dx: 70
+            }
+          ]
+
+          const makeAnnotations = d3.annotation()
+            .type(d3.annotationLabel)
+            .annotations(annotations)
+
+          d3.select("svg")
+            .append("g")
+            .attr("class", "annotation-group")
+            .call(makeAnnotations)
           d3.select('body').append('div').attr('id', 'tooltip').attr('style', 'position: absolute; opacity: 0;');
           d3.selectAll("rect").data(data).on('mouseover', function (d) {
             d3.select('#tooltip').transition().duration(200).style('opacity', 1).text(d.Total_Spend + "$ " + d.Category).style("left", (d3.event.pageX) + "px").style("top", (d3.event.pageY) + "px")
@@ -157,15 +208,6 @@
 
 
       </script>
-      <h2>How do I use my budget?</h2>
-      <p> You can use your budget every month:</p>
-      <ul>
-        <li>At the beginning of the month, make a plan for how you will spend your money that month. Write what you
-          think you will earn and spend.</li>
-        <li>Write down what you spend. Try to do this every day.</li>
-        <li>At the end of the month, see if you spent what you planned.</li>
-        <li>Use the information to help you plan the next month’s budget.</li>
-      </ul>
 
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
