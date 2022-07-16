@@ -49,11 +49,17 @@
       font-family: 'Lato';
     }
 
+    .annotation-note-bg {
+      fill: none;
+      border: none;
+    }
+    
     .annotation-note-title,
     text.title {
       font-weight: normal;
       border: none;
     }
+
   </style>
 </head>
 
@@ -144,7 +150,7 @@
         const annotations1 = [
           {
             note: {
-              title: "Line indicating Average Expenses"
+              title: "Line indicating Average Expense"
             },
             connector: {
               end: "arrow",        // Can be none, or arrow or dot
@@ -163,11 +169,11 @@
         const annotations2 = [
           {
             note: {
-              title: "Line indicating Highest Expenses"
+              title: "Month with Highest Expense"
             },
             connector: {
               end: "arrow",        // Can be none, or arrow or dot
-              type: "line",      // ?? don't know what it does
+              type: "line",      // creates line from the arrow to text
               lineType: "vertical",    // ?? don't know what it does
               endScale: 1    // arrow size
             },
