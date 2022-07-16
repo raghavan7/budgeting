@@ -140,14 +140,14 @@ var tabulate = function (data, columns) {
       var y = d3.scaleLinear().domain([0, 500]).range([height, 0]);
 
       d3.select("svg").append("g").attr('id', 'bars').attr("transform", "translate(" + margin + "," + margin + ")").selectAll('g').data(data).enter().append('rect').attr("width", 40).attr('x', function (d, i) { return 60 * i }).attr("height", 0).attr('y', 600).transition().duration(4000).delay(700).attr('y', (d) => y(d.Total_Spend)).attr("height", (d) => y(0) - y(d.Total_Spend)).attr("fill", function (d) {
-        if (d.Category === 'Shopping') { return "#bd3119"; }
-        if (d.Category === 'Dinning') { return "yellow"; }
-        if (d.Category === 'Grocery') { return "#3f96c4"; }
-        if (d.Category === 'Taver') { return "#832cc9"; }
-        if (d.Category === 'Entraintment') { return "#c4c223"; }
-        if (d.Category === 'Donation') { return "#fc9803"; }
-        if (d.Category === 'Gifts') { return "#4642d4"; }
-        if (d.Category === 'Education') { return "#ab2c61"; }
+        if (d.Category === 'Shopping') { return "#7fc97f"; }
+            if (d.Category === 'Dinning') { return "#beaed4"; }
+            if (d.Category === 'Grocery') { return "#3f96c4"; }
+            if (d.Category === 'Travel') { return "#fdc086"; }
+            if (d.Category === 'Entraintment') { return "#ffff99"; }
+            if (d.Category === 'Donation') { return "#386cb0"; }
+            if (d.Category === 'Gifts') { return "#f0027f"; }
+            if (d.Category === 'Education') { return "#bf5b17"; }
 
       })
       d3.select("svg").append("g").attr("transform", "translate(" + margin + "," + margin + ")").call(d3.axisLeft(y));
