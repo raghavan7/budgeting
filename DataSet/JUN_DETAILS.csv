@@ -1,12 +1,12 @@
 ﻿Month,Category,Transcation,Cost
-JUN,Shopping,Winco,100
-JUN,Shopping,Fredmeyer,50
-JUN,Dinning,Olive Garden,500
-JUN,Grocery,Winco,80
-JUN,Grocery,Winco,200
-JUN,Grocery,Winco,100
 JUN,Travel,New York,7000
-JUN,Entertainment,Movie Theater,80
-JUN,Donation,Good Will,10
+JUN,Dinning,Olive Garden,500
+JUN,Grocery,Winco,200
+JUN,Shopping,Winco,100
+JUN,Grocery,Winco,100
 JUN,Gifts,Birthday party,100
+JUN,Grocery,Winco,80
+JUN,Entertainment,Movie Theater,80
+JUN,Shopping,Fredmeyer,50
 JUN,Education,Coursera,25
+JUN,Donation,Good Will,10

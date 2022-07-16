@@ -1,24 +1,24 @@
 ﻿Month,Category,Transcation,Cost
-JULY,Shopping,Winco,130
-JULY,Shopping,Fredmeyer,200
+JULY,Shopping,Macy's,800
 JULY,Shopping,Target,300
 JULY,Shopping,Walmart,300
-JULY,Shopping,Macy's,800
-JULY,Shopping,Ross,60
 JULY,Dinning,Olive Garden,300
-JULY,Dinning,Noodles & co,200
-JULY,Grocery,Winco,80
-JULY,Grocery,Winco,200
-JULY,Grocery,Winco,100
-JULY,Grocery,Winco,80
-JULY,Grocery,New Seasons,100
-JULY,Travel,State park,200
 JULY,Travel,State park,300
-JULY,Entertainment,Movie Theater,80
-JULY,Entertainment,Movie Theater,70
-JULY,Donation,Good Will,70
-JULY,Donation,Good Will,80
+JULY,Shopping,Fredmeyer,200
+JULY,Dinning,Noodles & co,200
+JULY,Grocery,Winco,200
+JULY,Travel,State park,200
+JULY,Shopping,Winco,130
+JULY,Grocery,Winco,100
+JULY,Grocery,New Seasons,100
 JULY,Gifts,Birthday party,100
 JULY,Gifts,Birthday party,90
-JULY,Education,Coursera,25
+JULY,Grocery,Winco,80
+JULY,Grocery,Winco,80
+JULY,Entertainment,Movie Theater,80
+JULY,Donation,Good Will,80
+JULY,Entertainment,Movie Theater,70
+JULY,Donation,Good Will,70
+JULY,Shopping,Ross,60
 JULY,Education,Udemy,60
+JULY,Education,Coursera,25

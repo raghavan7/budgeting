@@ -1,13 +1,13 @@
 ﻿Month,Category,Transcation,Cost
+MAR,Dinning,Olive Garden,300
+MAR,Grocery,Winco,200
+MAR,Entertainment,Movie Theater,200
 MAR,Shopping,Winco,130
 MAR,Shopping,Fredmeyer,100
 MAR,Shopping,Target,100
-MAR,Dinning,Olive Garden,300
-MAR,Grocery,Winco,80
-MAR,Grocery,Winco,200
 MAR,Travel,State park,100
-MAR,Entertainment,Movie Theater,200
 MAR,Entertainment,Movie Theater,100
-MAR,Donation,Good Will,70
 MAR,Gifts,Birthday party,100
+MAR,Grocery,Winco,80
+MAR,Donation,Good Will,70
 MAR,Education,Udemy,60

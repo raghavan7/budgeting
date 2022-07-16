@@ -1,15 +1,15 @@
 ﻿Month,Category,Transcation,Cost
-NOV,Shopping,Winco,200
-NOV,Shopping,Fredmeyer,100
-NOV,Shopping,Target,200
-NOV,Shopping,Ross,60
-NOV,Dinning,Olive Garden,150
 NOV,Grocery,Winco,600
-NOV,Grocery,Winco,100
+NOV,Shopping,Winco,200
+NOV,Shopping,Target,200
 NOV,Grocery,Winco,200
+NOV,Dinning,Olive Garden,150
+NOV,Shopping,Fredmeyer,100
+NOV,Grocery,Winco,100
 NOV,Grocery,Winco,100
 NOV,Travel,Local,100
 NOV,Entertainment,Movie Theater,100
-NOV,Donation,Good Will,70
 NOV,Gifts,Birthday party,100
+NOV,Donation,Good Will,70
+NOV,Shopping,Ross,60
 NOV,Education,Coursera,25

@@ -1,12 +1,12 @@
 ﻿Month,Category,Transcation,Cost
-SEP,Shopping,Winco,100
-SEP,Shopping,Fredmeyer,50
 SEP,Dinning,Olive Garden,500
-SEP,Grocery,Winco,80
-SEP,Grocery,Winco,200
-SEP,Grocery,Winco,100
 SEP,Travel,State park,300
-SEP,Entertainment,Movie Theater,80
-SEP,Donation,Good Will,10
+SEP,Grocery,Winco,200
+SEP,Shopping,Winco,100
+SEP,Grocery,Winco,100
 SEP,Gifts,Birthday party,100
+SEP,Grocery,Winco,80
+SEP,Entertainment,Movie Theater,80
+SEP,Shopping,Fredmeyer,50
 SEP,Education,Coursera,25
+SEP,Donation,Good Will,10

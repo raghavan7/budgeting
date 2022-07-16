@@ -1,25 +1,25 @@
 ﻿Month,Category,Transcation,Cost
-JAN,Shopping,Winco,130
-JAN,Shopping,Fredmeyer,200
+JAN,Travel,Hawai,3000
+JAN,Shopping,Macy's,800
 JAN,Shopping,Target,300
 JAN,Shopping,Walmart,300
-JAN,Shopping,Macy's,800
-JAN,Shopping,Ross,60
 JAN,Dinning,Olive Garden,300
-JAN,Dinning,Noodles & co,200
-JAN,Grocery,Winco,80
-JAN,Grocery,Winco,200
-JAN,Grocery,Winco,100
-JAN,Grocery,Winco,80
-JAN,Grocery,New Seasons,100
-JAN,Travel,Hawai,3000
-JAN,Travel,State park,200
 JAN,Travel,State park,300
-JAN,Entertainment,Movie Theater,80
-JAN,Entertainment,Movie Theater,70
-JAN,Donation,Good Will,70
-JAN,Donation,Good Will,80
+JAN,Shopping,Fredmeyer,200
+JAN,Dinning,Noodles & co,200
+JAN,Grocery,Winco,200
+JAN,Travel,State park,200
+JAN,Shopping,Winco,130
+JAN,Grocery,Winco,100
+JAN,Grocery,New Seasons,100
 JAN,Gifts,Birthday party,100
 JAN,Gifts,Birthday party,90
-JAN,Education,Coursera,25
+JAN,Grocery,Winco,80
+JAN,Grocery,Winco,80
+JAN,Entertainment,Movie Theater,80
+JAN,Donation,Good Will,80
+JAN,Entertainment,Movie Theater,70
+JAN,Donation,Good Will,70
+JAN,Shopping,Ross,60
 JAN,Education,Udemy,60
+JAN,Education,Coursera,25

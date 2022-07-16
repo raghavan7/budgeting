@@ -1,18 +1,18 @@
 ﻿Month,Category,Transcation,Cost
-DEC,Shopping,Winco,200
-DEC,Shopping,Fredmeyer,100
-DEC,Shopping,Target,200
-DEC,Shopping,Walmart,100
-DEC,Shopping,Macy's,1500
-DEC,Shopping,Ross,60
-DEC,Dinning,Olive Garden,150
-DEC,Grocery,Winco,600
-DEC,Grocery,Winco,100
-DEC,Grocery,Winco,200
-DEC,Grocery,Winco,700
-DEC,Grocery,New Seasons,50
-DEC,Travel,Local,10
-DEC,Entertainment,Movie Theater,100
-DEC,Donation,Good Will,600
 DEC,Gifts,Christmas,2000
+DEC,Shopping,Macy's,1500
+DEC,Grocery,Winco,700
+DEC,Grocery,Winco,600
+DEC,Donation,Good Will,600
+DEC,Shopping,Winco,200
+DEC,Shopping,Target,200
+DEC,Grocery,Winco,200
+DEC,Dinning,Olive Garden,150
+DEC,Shopping,Fredmeyer,100
+DEC,Shopping,Walmart,100
+DEC,Grocery,Winco,100
+DEC,Entertainment,Movie Theater,100
+DEC,Shopping,Ross,60
+DEC,Grocery,New Seasons,50
 DEC,Education,Coursera,25
+DEC,Travel,Local,10
